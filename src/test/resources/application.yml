@@ -1,0 +1,4 @@
+'%test':
+  quarkus:
+    mongodb:
+      hosts: localhost:27018

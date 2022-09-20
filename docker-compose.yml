@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  mongodb:
+    image: mongo:5.0-focal
+    environment:
+      MONGO_INITDB_DATABASE: wordle
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
