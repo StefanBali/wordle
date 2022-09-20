@@ -1,0 +1,77 @@
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    margin: 0;
+    height: 100%;
+}
+
+h1 {
+    margin: 0;
+    padding: 15px;
+}
+
+.bottom {
+    bottom: 0;
+    position: absolute;
+    padding: 15px;
+}
+
+#play {
+    background-color: #6aaa64;
+    padding: 12px;
+    font-size: 1.5rem;
+    border-radius: 5px;
+    border: 2px solid black;
+}
+
+#game, #start {
+    height: calc(100% - 67px);
+    display: flex;
+    flex-flow: column;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+}
+
+h1, input {
+    text-align: center;
+}
+
+input {
+    text-transform: uppercase;
+    height: 62px;
+    width: 62px;
+    margin: 3px 1px;
+    font-size: 2rem;
+    font-weight: bold;
+    border: 2px solid #d3d6da;
+}
+
+.not-contained {
+    color: white;
+    background-color: #787c7e;
+    border: none;
+}
+
+.wrong-spot {
+    color: white;
+    background-color: #c9b458;
+    border: none;
+}
+
+.correct-spot {
+    color: white;
+    background-color: #6aaa64;
+    border: none;
+}
+
+.d-none {
+    display: none !important;
+}

@@ -5,6 +5,7 @@ import de.lise.letscode.wordle.usecase.guess.port.WordByIdPort;
 import de.lise.letscode.wordle.usecase.pick.port.RandomWordPort;
 import io.quarkus.mongodb.panache.PanacheMongoRepository;
 import org.bson.conversions.Bson;
+import org.bson.types.ObjectId;
 
 import javax.enterprise.context.ApplicationScoped;
 import java.util.List;
@@ -24,6 +25,9 @@ public class WordRepository implements PanacheMongoRepository<WordEntity>, Rando
 
     @Override
     public Optional<String> findWordById(String id) {
-        throw new UnsupportedOperationException();
+        if (!ObjectId.isValid(id)) {
+            return Optional.empty();
+        }
+        return findByIdOptional(new ObjectId(id)).map(WordEntity::getWord);
     }
 }

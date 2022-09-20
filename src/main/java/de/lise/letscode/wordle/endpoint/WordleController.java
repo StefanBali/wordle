@@ -43,6 +43,8 @@ public class WordleController {
     @GET
     @Path("{id}/guess")
     public RestResponse<List<ScoreDto>> guessWord(String id, @RestQuery String word) {
-        throw new UnsupportedOperationException();
+        return guessWord.guessWord(id, word)
+                .map(scoreList -> ResponseBuilder.ok(ScoreDto.fromScores(scoreList.scores())).build())
+                .orElse(notFound());
     }
 }
